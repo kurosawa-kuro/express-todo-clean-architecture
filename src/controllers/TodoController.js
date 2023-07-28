@@ -5,7 +5,7 @@ class TodoController {
 
     async add(req, res) {
         try {
-            const todo = await this.todoUseCase.add(req.body.title); // `req.body` から `title` を抽出
+            const todo = await this.todoUseCase.add(req.body.title);
             res.status(200).json(todo);
         } catch (error) {
             res.status(500).json({ message: error.message });
@@ -20,7 +20,6 @@ class TodoController {
             res.status(404).end();
         }
     }
-
-    // and so on...
 }
+
 module.exports = TodoController;

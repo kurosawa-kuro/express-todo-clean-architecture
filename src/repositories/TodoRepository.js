@@ -1,17 +1,15 @@
 class TodoRepository {
     constructor() {
-        this.todos = []; // この例では、状態をメモリに保存します。
+        this.todos = [];
     }
 
     async add(todo) {
-        console.log("check TodoRepository");
-        console.log({ todo });
         const id = this.todos.length + 1;
-        console.log({ id });
         const newTodo = { ...todo, id };
-        console.log({ newTodo });
         this.todos.push(newTodo);
-        console.log("this.todos", this.todos);
+
+        console.log('todos', this.todos);
+
         return newTodo;
     }
 
